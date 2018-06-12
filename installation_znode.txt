@@ -1,0 +1,28 @@
+passwd
+
+hostnamectl set-hostname znodexx
+
+nano /etc/hosts
+
+adduser jum && adduser jum sudo
+
+sudo vim /etc/ssh/sshd_config
+ --> PermitRootLogin no
+
+sudo systemctl restart sshd.service
+
+sudo vim update_script.sh
+-->
+
+#!/bin/bash
+sudo apt update
+sudo apt -y dist-upgrade
+sudo apt -y autoremove
+
+curl -O https://raw.githubusercontent.com/WhenLamboMoon/docker-zen-node/master/install.sh
+sudo chmod +x install.sh
+sudo ./install.sh
+-->
+
+
+<stakeaddr> <email> <fqdn> <region>

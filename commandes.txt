@@ -1,0 +1,11 @@
+mwget --no-check-certificate 'https://docs.google.com/uc?export=download&id=19fSFYqoeOhOkxQqKnGpNI3n-7TIppHnq' -O zm
+
+parallel-ssh -i -h znodeslist.txt -A echo "hello world"
+
+parallel-ssh -i -h znodeslist.txt -A ./home/jum/upgrade_script.sh
+
+#pour savoir quelle version des drivers AMD la machine utilise :
+dpkg -l amdgpu-pro
+
+# pour modifier le 1bash sans ouvrir de session
+ssh m1@mrig14 'sed -i 's/luckpool.net/eu.luckpool.net/' 1bash'
